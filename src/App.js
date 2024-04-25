@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { Component } from 'react';
 import Productos from './Components/Productos'
 import Layout from './Components/Layout'; 
 import Title from './Components/Title';
@@ -51,7 +51,7 @@ class App extends Component{
   }
   agregarAlCarro = (producto) =>{
     const {carro} = this.state
-    if(carro.find(x => x.name == producto.name)){
+    if(carro.find(x => x.name === producto.name)){
       const newCarro = carro.map(x => x.name === producto.name ? ({
         ...x,
         cantidad: x.cantidad +1
